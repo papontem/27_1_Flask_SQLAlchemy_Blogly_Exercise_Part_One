@@ -22,7 +22,6 @@ body {
 	background-color: gray;
 }
 h1 {
-	font-size: larger;
 	color: blueviolet;
 }
 main#content {
@@ -44,4 +43,10 @@ main#content {
 .messages .success p {
 	border: solid 2px green;
 	background-color: rgba(144, 255, 144, 0.5);
+}
+form#edit_buttun_form{
+	display: inline;
+}
+form#delete_button_form{
+	display: inline;
 }

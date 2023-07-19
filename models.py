@@ -34,7 +34,7 @@ class User(db.Model):
 
     def __repr__(self):
         u = self
-        return f"<User id#={u.id} | First Name={u.first_name} | Last Name={u.last_name} | img_url={u.img_url} | hunger level={u.hunger}>"
+        return f"<User id#={u.id} | first_name={u.first_name} | last_name={u.last_name} | img_url={u.img_url}>"
     
 
     def greet(self):
