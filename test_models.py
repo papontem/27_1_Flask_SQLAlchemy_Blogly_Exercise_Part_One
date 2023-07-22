@@ -20,8 +20,8 @@ class UserModelTestCase(TestCase):
         User.query.delete()
         # db.session.commit()
 
-        user = User(first_name="TestUser",last_name="Tattertot",img_url="imgs/pam_favicon_animated.gif")
-        user2 = User(first_name="TestUser2",last_name="FrenchFry",img_url="imgs/pam_favicon_animated.gif") 
+        user = User(first_name="TestUser",last_name="Tattertot",img_url="")
+        user2 = User(first_name="TestUser2",last_name="FrenchFry",img_url="") 
         
         db.session.add(user)
         db.session.add(user2)
@@ -40,8 +40,6 @@ class UserModelTestCase(TestCase):
         self.assertEqual(self.user.greet(), "I'm TestUser Tattertot")
         self.assertEqual(self.user2.greet(), "I'm TestUser2 FrenchFry")
 
-
-    
     def test_get_all_first_name(self): #TODO get the query result and assert
 
         query_result1 = User.get_all_first_name('TestUser')
@@ -50,7 +48,6 @@ class UserModelTestCase(TestCase):
         # ADD THE ASSERT
         self.assertEqual(query_result1,[self.user])
         self.assertEqual(query_result2,[self.user2])
-    
     
     def test_get_all_last_name(self): #TODO get the query result and assert
 
@@ -69,11 +66,3 @@ class UserModelTestCase(TestCase):
         # ADD THE ASSERT
         self.assertEqual(query_result,[self.user, self.user2])
     
-
-    # def test_get_by_species(self):
-    #     pet = Pet(name="TestPet", species="dog", hunger=10)
-    #     db.session.add(pet)
-    #     db.session.commit()
-
-    #     dogs = Pet.get_by_species('dog')
-    #     self.assertEqual(dogs, [pet])
